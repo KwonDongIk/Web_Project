@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 목록</title>
+</head>
+<body>
+    <h1>회원 목록</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Password</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody id="list"></tbody>
+    </table>
+
+    <script>
+        // localStorage에서 members 가져오기
+        let members = JSON.parse(localStorage.getItem('members')) || [];
+        console.log(members);
+
+        // 테이블에 추가하는 함수
+        function makeRow(item) {
+            return `<tr>
+                        <td>${item.id}</td>
+                        <td>${item.pw}</td>
+                        <td>${item.name}</td>
+                    </tr>`;
+        }
+
+        // members 데이터를 테이블에 추가
+        let tbody = document.querySelector('#list');
+        members.forEach(member => {
+            tbody.innerHTML += makeRow(member);
+        });
+    </script>
+</body>
+</html>
