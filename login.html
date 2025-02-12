@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,18 +25,18 @@
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="index.html">
             <span> <!-- title 제목 -->
-              KDI 렌터카
+              KDI렌터카
             </span>
           </a>
 
           <div class="navbar-collapse" id="">
             <div class="user_option">
               <a href="login.html">
-                <img src="/Rent4u-1.0.0/images/login.jpg" alt="" style="width: 50px;">
+                <img src="/images/login.jpg" alt="" style="width: 50px;">
               </a>
             </div>
             <div class="custom_menu-btn">
-              <button onclick="openNav()">
+              <button onclick="openNav()" title="메뉴">
                 <span class="s-1"> </span>
                 <span class="s-2"> </span>
                 <span class="s-3"> </span>
@@ -60,7 +60,7 @@
 <div class="login-container">
   <div class="wrapper">
     <form name = "login_form" action="">
-      <h1>안녕하세요. <br> KDI 렌터카 로그인 입니다.</h1>
+      <h1>안녕하세요. <br> KDI렌터카 로그인 입니다.</h1>
       <div class="input-box">
         <input type="text" name = "user_id" placeholder="아이디 입력" required>
         <i class='bx bxs-user'></i>
@@ -108,12 +108,15 @@
     for (let i = 0; i < members.length; i++){
       
       if(members[i].id == id && members[i].pw == pw){
-        alert('환영합니다.');
-        
-        window.location.href = 'index.html';
+        Swal.fire({
+          title: "로그인 성공",
+          icon: "success",
+          timer: 3000
+        }).then((result) => {
+          window.location.href = 'index.html';
+        });
         return;
       }
-      
     }
     alert('아이디와 비밀번호를 확인하세요.');
     id_input.focus();
@@ -122,8 +125,9 @@
 
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
 </body>
 </html>
