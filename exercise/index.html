@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web_Project</title>
+</head>
+<body>
+  <a href="login.html">로그인</a><br>
+  <a href="memberAdd.html">회원관리</a>
+  <a href="product.html">상품목록</a>
+
+
+  <script src="Javascript/init.js"></script>
+  <script>
+    localStorage.setItem('memberData', JSON.stringify(memberData));
+    localStorage.setItem('productData', JSON.stringify(productData));
+    localStorage.setItem('cartData', JSON.stringify(cartData));
+  </script>
+</body>
+</html>
+
+
+
+<!-- https://themewagon.github.io/carrent/index.html -->
