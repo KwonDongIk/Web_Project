@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Web_Project</title>
+  <title>KDI렌터카</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -44,6 +44,13 @@
 
           <div class="navbar-collapse" id="">
             <div class="user_option">
+              <div class="userinfo" style="display: none;">
+                <span id="userName" style="color: white; margin-right: 15px;"></span>
+                <button onclick="logout()" style="background: none; border: none; cursor: pointer;">
+                  <img src="/images/logout.png" alt="" style="width: 50px;">
+                </button>
+
+              </div>
               <a href="login.html">
                 <img src="/images/login.jpg" alt="" style="width: 50px;">
               </a>
@@ -57,12 +64,11 @@
             </div>
             <div id="myNav" class="overlay">
               <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="car.html">Cars</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="login.html">Login</a>
+                <a href="index.html">메뉴</a>
+                <a href="registerCar.html">예약 확인</a>
+                <a href="car.html">여행 매거진</a>
+                <a href="contact.html">상담 문의</a>
+                <a href="login.html">로그인</a>
               </div>
             </div>
           </div>
@@ -82,7 +88,7 @@
               <div class="carousel-item active">
                 <div class="detail-box">
                   
-                    <h3>KDI 렌터카 첫 이용이라면</h3> <br>
+                    <h3>KDI렌터카 첫 이용이라면</h3> <br>
                     <h2>제주 첫날 무료</h2> <br>
                     <h4>첫날 무료 혜택으로 <br>
                     제주도 여행을 떠나보세요.</h4>
@@ -133,47 +139,62 @@
   </div>
 
   <!-- book section -->
+  
   <section class="book_section">
     <div class="form_container">
-      <form action="">
+      <form action="" onsubmit="return false;">
         <div class="form-row">
           <div class="col-lg-8">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="parkingName">픽업 장소</label>
-                <input type="text" class="form-control" placeholder="acb ">
+                <label for="parkingName">대여 장소</label>
+                <select class="form-control" id="">
+                  <option selected="">대여 장소 선택</option>
+                  <option value="1">대구국제공항</option>
+                  <option value="2">인천국제공항 T1</option>
+                  <option value="3">김해국제공항</option>
+                  <option value="4">부산항 국제여객터미널</option>
+                </select>
               </div>
               <div class="col-md-6">
-                <label for="parkingNumber">반납 장소 </label>
-                <input type="text" class="form-control" placeholder="acb ">
+                <label for="parkingNumber">반납 장소</label>
+                <select class="form-control" id="">
+                  <option selected="">반납 장소 선택</option>
+                  <option value="1">대구국제공항</option>
+                  <option value="2">인천국제공항 T1</option>
+                  <option value="3">김해국제공항</option>
+                  <option value="4">부산항 국제여객터미널</option>
+                </select>
               </div>
             </div>
             <div class="form-row">
               <div class="col-md-6">
                 <label for="parkingName">대여일</label>
-                <input type="date" class="form-control" value="2025-02-12">
+                <input type="date" class="form-control" id="rentalDate">
               </div>
               <div class="col-md-6">
                 <label for="parkingNumber">반납일</label>
-                <input type="date" class="form-control" value="2025-02-20">
+                <input type="date" class="form-control" id="returnDate">
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="btn-container">
-              <button type="submit" class="">
-                검색하기
-              </button>
             </div>
           </div>
         </div>
 
+        <div class="btn-container">
+          <button type="submit" id="searchButton">
+            검색하기
+          </button>
+        </div>
+
       </form>
     </div>
+
     <div class="img-box">
       <img src="images/genesis.png" alt="" style="width: 450px;">
     </div>
+
   </section>
+
 
   <!-- end book section -->
 
@@ -192,7 +213,7 @@
       <div class="car_container">
         <div class="box">
           <div class="img-box">
-            <img src="images/c-1.png" alt="">
+            <img src="images/ev6.png" alt="">
           </div>
           <div class="detail-box">
             <h5>
@@ -208,14 +229,14 @@
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/c-2.png" alt="">
+            <img src="images/eclass.png" alt="" style="height: 132px;">
           </div>
           <div class="detail-box">
             <h5>
               제주여행을 더 특별하게 <br> 오픈카로 달려봐요
             </h5><br>
             <p>
-              컨퍼터블 쿠페 렌트 가능
+              벤츠 E 클래스 카브리올레 렌트 가능
             </p>
             <a href="">
               자세히보기
@@ -224,7 +245,7 @@
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/c-3.png" alt="">
+            <img src="images/palisade.png" alt="" style="height: 132px;">
           </div>
           <div class="detail-box">
             <h5>
@@ -281,15 +302,15 @@
       <div class="book_now">
         <div class="detail-box">
           <h2>
-            Our Best Cars
+            최상급의 차량을 즉시 렌트하세요!
           </h2>
           <p>
-            It is a long established fact that a reader will be distracted by the
+            버스, 헬리콥터, 비행기도 가능합니다.
           </p>
         </div>
         <div class="btn-box">
           <a href="">
-            Book Now
+            예약하기
           </a>
         </div>
       </div>
@@ -305,68 +326,68 @@
       <div class="rent_container">
         <div class="box">
           <div class="img-box">
-            <img src="images/r-1.png" alt="">
+            <img src="images/santafe.jpg" alt="">
           </div>
           <div class="price">
             <a href="">
-              Rent $200
+              200원
             </a>
           </div>
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/r-2.png" alt="">
+            <img src="images/torresev.png" alt="">
           </div>
           <div class="price">
             <a href="">
-              Rent $200
+              1,000원
             </a>
           </div>
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/r-3.png" alt="">
+            <img src="images/ev9.png" alt="">
           </div>
           <div class="price">
             <a href="">
-              Rent $200
+              10,000,000원
             </a>
           </div>
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/r-4.png" alt="">
+            <img src="images/evbus.png" alt="">
           </div>
           <div class="price">
             <a href="">
-              Rent $200
+              500원
             </a>
           </div>
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/r-5.png" alt="">
+            <img src="images/a330.png" alt="">
           </div>
           <div class="price">
             <a href="">
-              Rent $200
+              5,500원
             </a>
           </div>
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images/r-6.png" alt="">
+            <img src="images/bomber.png" alt="">
           </div>
           <div class="price">
             <a href="">
-              Rent $200
+              9,999,999,990원
             </a>
           </div>
         </div>
       </div>
       <div class="btn-box">
         <a href="">
-          See More
+          더 보기
         </a>
       </div>
     </div>
@@ -482,7 +503,7 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          KDI 렌터카를 선택하는 이유
+          KDI렌터카를 선택하는 이유
         </h2>
         <p>
           저희는 아래의 4가지를 항상 중요시해요.
@@ -782,9 +803,10 @@
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/custom.js"></script>
+  <script src="js/index.js"></script>
 
 
 </body>

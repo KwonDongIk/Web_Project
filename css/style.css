@@ -367,9 +367,11 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transform: translateY(-75px);
-          transform: translateY(-75px);
+  height: 100px;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
 }
+
 
 .book_section .form_container {
   -webkit-box-flex: 2.5;
@@ -378,9 +380,12 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 300px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transform: translate(-200px, -500px);
+          transform: translate(-200px, -500px);
 }
 
 .book_section .img-box {
@@ -396,18 +401,34 @@ a:focus {
 }
 
 .book_section form {
-  width: 75%;
-  padding: 15px 35px;
+  width: 50%;
+  padding: 15px 25px;
   background-color: #fefdfc;
   -webkit-box-shadow: 0px 0px 20px 11px rgba(0, 0, 0, 0.09);
   box-shadow: 0px 0px 20px 11px rgba(0, 0, 0, 0.09);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .book_section form label {
   color: #656565;
   margin-bottom: 2px;
   margin-top: 10px;
+}
+
+.book_section .form_container form .col-lg-8 {
+  padding: 0 !important;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+.book_section .form_container form .form-row {
+  margin: 0 0 15px 0 !important;
+}
+
+.book_section .form_container form .col-md-6 {
+  padding: 0 5px !important;
 }
 
 .book_section form .form-control {
@@ -440,6 +461,7 @@ a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-top: -30px !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -694,14 +716,24 @@ a:focus {
   max-width: 100%;
 }
 
+.rent_section .rent_container .box .price {
+  width: 150px;
+  margin: 0 auto;
+}
+
+
 .rent_section .rent_container .box .price a {
-  display: inline-block;
-  padding: 8px 25px;
+  display: block;
+  width: 100%;
+  padding: 8px 0px;
   background-color: #f22324;
   color: #fefdfc;
   border-radius: #000000;
   border: 1px solid #f22324;
   font-weight: bold;
+  white-space: nowrap;  /* 텍스트 줄바꿈 방지 */
+  overflow: hidden;     /* 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis;  /* 넘치는 텍스트에 ... 표시 */
 }
 
 .rent_section .rent_container .box .price a:hover {

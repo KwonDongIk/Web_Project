@@ -44,12 +44,11 @@
             </div>
             <div id="myNav" class="overlay">
               <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="car.html">Cars</a>
-                <a href="blog.html">Blog</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="login.html">Login</a>
+                <a href="index.html">메뉴</a>
+                <a href="registerCar.html">예약 확인</a>
+                <a href="car.html">여행 매거진</a>
+                <a href="contact.html">상담 문의</a>
+                <a href="login.html">로그인</a>
               </div>
             </div>
           </div>
@@ -86,9 +85,9 @@
 <script>
   // js 객체
   let members = [
-    {id: 'user01', pw: '1111', name: '홍길동'},
-    {id: 'user02', pw: '2222', name: '홍기동'},
-    {id: 'user03', pw: '3333', name: '홍이동'}
+    {id: 'user01', pw: '1111', name: '권동익', responsibility : 'User'},
+    {id: 'user02', pw: '2222', name: '호날두', responsibility : 'User'},
+    {id: 'user03', pw: '3333', name: '관리자', responsibility : 'Admin'}
   ]
 
   // 공유 localstorage -> 문자열이 된다.
@@ -108,6 +107,10 @@
     for (let i = 0; i < members.length; i++){
       
       if(members[i].id == id && members[i].pw == pw){
+
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userID', members[i].id);
+
         Swal.fire({
           title: "로그인 성공",
           icon: "success",
@@ -122,7 +125,14 @@
         return;
       }
     }
-    alert('아이디와 비밀번호를 확인하세요.');
+    Swal.fire({
+          title: "아이디와 비밀번호를 확인하세요.",
+
+          timer: 3000,
+          draggable: true,
+          confirmButtonColor: '#240a5e',
+          confirmButtonText: '확인'
+    })
     id_input.focus();
   })
 </script>
