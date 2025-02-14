@@ -22,10 +22,10 @@ document.getElementById('returnDate').value = formatDate(returnDate);
 const links = document.querySelectorAll('#myNav .overlay-content a');
 links.forEach(link => {
   link.addEventListener('click', function(e) {
-    // href 값 가져오기
+    
     const href = this.getAttribute('href');
     
-    // 로그인 페이지 링크는 체크하지 않음
+    
     if (href === 'login.html') {
       return;
     }
