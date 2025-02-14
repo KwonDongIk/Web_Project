@@ -5,7 +5,7 @@
 body {
   font-family: "42dot Sans", sans-serif; 
   color: #0c0c0c;
-  background-color: #ffffff;
+  background-color: #f4f3f3;
 }
 
 .layout_padding {
@@ -66,9 +66,11 @@ body {
 
 .header_section {
   position: absolute;
+  display: inline;
   width: 100%;
   top: 0;
   left: 0;
+  background-color: #240a5e;
 }
 
 .header_section .container-fluid {
@@ -79,6 +81,130 @@ body {
 .header_section .nav_container {
   margin: 0 auto;
 }
+
+/* body main_container */
+.main_container {
+  display: flex;
+  padding: 150px 0 0 25px;
+  width: 100%;
+  gap: 10%;
+}
+
+.mypage_left {
+  flex: 0 0 50%;
+}
+
+.mypage_right {
+  flex: 0 0 35% ;
+}
+
+.main_container .mypage_Title h1 {
+  font-weight: bold;
+}
+
+.main_container .mypage_Title h6 {
+  color: #9d9c9c;
+  margin-top: -10px;
+}
+
+.main_container .mypage_Title #h6_rightTitle {
+  color: #504e4e;
+  text-align: right;
+  text-decoration: underline;
+}
+
+.main_container .mypage_Title {
+  margin-bottom: 80px;
+}
+
+.main_container .lent_Title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.main_container .lent_Title h4 {
+  font-weight: bold;
+}
+
+.main_container .lent_Title h6 {
+  text-decoration: underline;
+}
+
+.main_container .lent_box h4 {
+  font-weight: bold;
+}
+
+.main_container .lent_box h6 {
+  text-decoration: underline;
+}
+
+.main_container .lent_box {
+  border: 1px solid #2a2929;
+  border-radius: 10px;
+  height: 200px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.main_container .service_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_container .coupon {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 150px;
+  width: 45%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.main_container .inquiry {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 150px;
+  width: 45%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.main_container .help {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 670px;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px 0 30px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.main_container .help_title h2 {
+  font-weight: bold;
+}
+
+
+
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link img {
   width: 22px;

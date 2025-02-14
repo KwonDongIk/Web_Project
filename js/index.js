@@ -75,7 +75,7 @@ document.getElementById('searchButton').addEventListener('click', function(e) {
   const returnLocation = document.querySelectorAll('.book_section select')[1].value;
 
   // 장소 선택
-  if (pickupLocation === '대여 장소 선택' || returnLocation === '반납 장소 선택') {
+  if (pickupLocation === '' || returnLocation === '') {
     Swal.fire({
       title: "장소를 선택해주세요",
       text: "대여 장소와 반납 장소를 선택해주세요.",
@@ -111,6 +111,10 @@ if (isLoggedIn === 'true' && userID){
       userInfo.style.display = 'none';
       loginLink.style.display = 'block';
     }
+}
+
+function myPage() {
+  window.location.href = 'mypage.html';
 }
 
 function logout() {

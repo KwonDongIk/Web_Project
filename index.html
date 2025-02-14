@@ -45,16 +45,18 @@
           <div class="navbar-collapse" id="">
             <div class="user_option">
               <div class="userinfo" style="display: none;">
-                <span id="userName" style="color: white; margin-right: 15px;"></span>
+                <span id="userName"  onclick="myPage()" style="color: white; margin-right: 15px; cursor: pointer;"></span>
                 <button onclick="logout()" style="background: none; border: none; cursor: pointer;">
-                  <img src="/images/logout.png" alt="" style="width: 50px;">
+                  <img src="/images/logout.png" alt="" style="width: 40px;">
                 </button>
-
               </div>
+
               <a href="login.html">
                 <img src="/images/login.jpg" alt="" style="width: 50px;">
               </a>
+
             </div>
+
             <div class="custom_menu-btn">
               <button onclick="openNav()" title="메뉴"> <!-- title 넣어줌 -->
                 <span class="s-1"> </span>
@@ -149,7 +151,7 @@
               <div class="col-md-6">
                 <label for="parkingName">대여 장소</label>
                 <select class="form-control" id="">
-                  <option selected="">대여 장소 선택</option>
+                  <option selected="" value="">대여 장소 선택</option>
                   <option value="1">대구국제공항</option>
                   <option value="2">인천국제공항 T1</option>
                   <option value="3">김해국제공항</option>
@@ -159,7 +161,7 @@
               <div class="col-md-6">
                 <label for="parkingNumber">반납 장소</label>
                 <select class="form-control" id="">
-                  <option selected="">반납 장소 선택</option>
+                  <option selected="" value="">반납 장소 선택</option>
                   <option value="1">대구국제공항</option>
                   <option value="2">인천국제공항 T1</option>
                   <option value="3">김해국제공항</option>

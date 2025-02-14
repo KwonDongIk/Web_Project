@@ -1,6 +1,7 @@
 const userInfo = document.querySelector('.userinfo');
 const userName = document.getElementById('userName');
 const loginLink = document.querySelector('.user_option a');
+const welcomeMypage = document.getElementById('mypage_Name');
 
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 const userID = localStorage.getItem('userID');
@@ -18,6 +19,20 @@ if (isLoggedIn === 'true' && userID){
       userInfo.style.display = 'none';
       loginLink.style.display = 'block';
     }
+}
+
+if (isLoggedIn === 'true' && userID){
+  const members = JSON.parse(localStorage.getItem('members'));
+  const user = members.find(member => member.id === userID);
+
+
+    if (user){
+      welcomeMypage.innerHTML = `<strong>${user.name}</strong> 님 안녕하세요!`;
+    }
+}
+
+function myPage() {
+  window.location.href = 'mypage.html';
 }
 
 function logout() {

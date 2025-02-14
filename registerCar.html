@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>예약 확인</title>
+  <title>예약확인</title>
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <!-- Custom styles for this template -->
-  <link href="css/style1.css" rel="stylesheet" />
+  <link href="css/style_registerCar.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <link href="css/login.css" rel="stylesheet" >
   <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -32,15 +31,16 @@
           <div class="navbar-collapse" id="">
             <div class="user_option">
               <div class="userinfo" style="display: none;">
-                <span id="userName" style="color: white; margin-right: 15px;"></span>
+                <span id="userName"  onclick="myPage()" style="color: white; margin-right: 15px; cursor: pointer;"></span>
                 <button onclick="logout()" style="background: none; border: none; cursor: pointer;">
-                  <img src="/images/logout.png" alt="" style="width: 50px;">
+                  <img src="/images/logout.png" alt="" style="width: 40px;">
                 </button>
-
               </div>
+
               <a href="login.html">
                 <img src="/images/login.jpg" alt="" style="width: 50px;">
               </a>
+
             </div>
             <div class="custom_menu-btn">
               <button onclick="openNav()" title="메뉴">
@@ -62,12 +62,35 @@
         </nav>
       </div>
     </header>
+
+
   
   
   
-    <section>
-      
-    </section>
+    <div class="main_container">
+      <div class="register_main">
+        <div class="register_title">
+          <h1>예약하기</h1>
+        </div>
+        <div class="registerCar_section">
+          <div class="content">
+            <div class="contentCar">
+              <div class="car_info_container">
+                <img src="/images/palisade.png" alt="">
+                <div class="car_info">
+                  <span>현대자동차</span>
+                  <span>팰리세이드</span>
+                  <span class="car_info_price">99000 원</span>
+                </div>
+              </div>
+              <div class="btn">
+                <button type="submit" class="register_btn">예약하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -77,5 +100,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/header.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/register.js"></script>
+    </div>
 </body>
 </html>
