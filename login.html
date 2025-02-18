@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로그인</title>
   <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <!-- Custom styles for this template -->
@@ -13,10 +15,12 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-  <link href="css/login.css" rel="stylesheet" >
+  <link href="css/login.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
 </head>
+
 <body>
   <div class="hero_area">
     <!-- header section strats -->
@@ -55,94 +59,45 @@
         </nav>
       </div>
     </header>
-    
-<div class="login-container">
-  <div class="wrapper">
-    <form name = "login_form" action="">
-      <h1>안녕하세요. <br> KDI렌터카 로그인 입니다.</h1>
-      <div class="input-box">
-        <input type="text" name = "user_id" placeholder="아이디 입력" required>
-        <i class='bx bxs-user'></i>
-      </div>
-      <div class="input-box">
-        <input type="password" name = "user_pw" placeholder="비밀번호 입력" required>
-        <i class='bx bxs-lock-alt' ></i>
-      </div>
 
-      <div class="remember-forgot">
-        <label for=""><input type="checkbox">계정 기억하기</label>
-      </div>
+    <div class="login-container">
+      <div class="wrapper">
+        <form name="login_form" action="">
+          <h1>안녕하세요. <br> KDI렌터카 로그인 입니다.</h1>
+          <div class="input-box">
+            <input type="text" name="user_id" placeholder="아이디 입력" required>
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" name="user_pw" placeholder="비밀번호 입력" required>
+            <i class="bx bxs-lock-alt"></i>
+          </div>
 
-      <button type="submit" class="btn">로그인</button>
+          <div class="remember-forgot">
+            <label for=""><input type="checkbox">계정 기억하기</label>
+          </div>
 
-      <div class="register-link">
-        <p>계정이 없으신가요?&nbsp;&nbsp;<a href="#">가입하기</a></p>
+          <button type="submit" class="btn">로그인</button>
+
+          <div class="register-link">
+            <p>계정이 없으신가요?&nbsp;&nbsp;<a href="#">가입하기</a></p>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
+
+    <!-- javascript -->
+    <script src="Javascript/index.js"></script>
+    <script src="Javascript/login.js"></script>
+    <script src="Javascript/custom.js"></script>
+    <script src="Javascript/bootstrap.js"></script>
+    <script src="Javascript/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
   </div>
-</div>
-
-<script>
-  // js 객체
-  let members = [
-    {id: 'user01', pw: '1111', name: '권동익', responsibility : 'User'},
-    {id: 'user02', pw: '2222', name: '호날두', responsibility : 'User'},
-    {id: 'user03', pw: '3333', name: '관리자', responsibility : 'Admin'}
-  ]
-
-  // 공유 localstorage -> 문자열이 된다.
-  let members_json = JSON.stringify(members);
-  // 회원정보
-  localStorage.setItem('members', members_json);
-
-  // login_form에 submit 등록
-  document.forms.login_form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    let id_input = document.querySelector('input[name="user_id"]');
-    let id = document.querySelector('input[name="user_id"]').value;
-    let pw = document.querySelector('input[name="user_pw"]').value;
-    // members의 저장값
-    let members = JSON.parse(localStorage.getItem('members'));
-
-    for (let i = 0; i < members.length; i++){
-      
-      if(members[i].id == id && members[i].pw == pw){
-
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('userID', members[i].id);
-
-        Swal.fire({
-          title: "로그인 성공",
-          icon: "success",
-          timer: 3000,
-          draggable: true,
-          confirmButtonColor: '#240a5e',
-          confirmButtonText: '확인'
-
-        }).then((result) => {
-          window.location.href = 'index.html';
-        });
-        return;
-      }
-    }
-    Swal.fire({
-          title: "아이디와 비밀번호를 확인하세요.",
-
-          timer: 3000,
-          draggable: true,
-          confirmButtonColor: '#240a5e',
-          confirmButtonText: '확인'
-    })
-    id_input.focus();
-  })
-</script>
-
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/custom.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
-</div>
 </body>
+
 </html>
